@@ -1,0 +1,8 @@
+{
+  "name": "IPE I: Digital Escape Room",
+  "description": "Una aplicación web educativa interactiva para el módulo IPE I, con 5 misiones basadas en los Resultados de Aprendizaje, desafíos de autoconocimiento y un candado final.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
