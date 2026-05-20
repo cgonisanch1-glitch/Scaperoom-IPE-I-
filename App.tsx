@@ -78,17 +78,6 @@ const missions: Mission[] = [
         feedback: "Exacto. El análisis debe conectar el ciclo con el mercado laboral real."
       },
       {
-        q: "¿Qué diferencia básica existe entre acceder al sector privado y a la función pública?",
-        options: [
-          "En la función pública se accede normalmente mediante procedimientos basados en igualdad, mérito y capacidad.",
-          "En el sector privado nunca hay entrevistas.",
-          "En la función pública no se piden requisitos.",
-          "En el sector privado no existen convenios colectivos."
-        ],
-        answer: 0,
-        feedback: "Correcto. La función pública exige procesos formales como oposición, concurso o concurso-oposición."
-      },
-      {
         q: "¿Qué son las competencias personales y sociales con valor profesional?",
         options: [
           "Solo conocimientos técnicos del ciclo.",
@@ -143,17 +132,6 @@ const missions: Mission[] = [
         answer: 0,
         feedback:
           "Correcto. Primero se intenta prevenir; si no es posible eliminar el riesgo, se aplican medidas de protección."
-      },
-      {
-        q: "¿Qué debe hacerse en primer lugar ante una emergencia siguiendo el protocolo PAS?",
-        options: [
-          "Socorrer sin mirar el entorno.",
-          "Proteger la zona y a las personas implicadas.",
-          "Llamar a la familia de la víctima.",
-          "Mover siempre a la persona accidentada."
-        ],
-        answer: 1,
-        feedback: "Exacto. PAS significa Proteger, Avisar y Socorrer."
       },
       {
         q: "¿Cuál de estos ejemplos es un daño profesional?",
@@ -216,17 +194,6 @@ const missions: Mission[] = [
           "Muy bien. El convenio colectivo es una fuente clave para conocer las condiciones de trabajo."
       },
       {
-        q: "En una nómina, ¿qué es el líquido a percibir?",
-        options: [
-          "El salario bruto antes de deducciones.",
-          "La cantidad final que cobra la persona trabajadora después de aplicar deducciones.",
-          "La base de cotización por contingencias comunes.",
-          "El total de complementos salariales sin incluir salario base."
-        ],
-        answer: 1,
-        feedback: "Correcto. El líquido a percibir es el salario neto."
-      },
-      {
         q: "¿Por qué es importante la Seguridad Social?",
         options: [
           "Porque garantiza prestaciones y protección ante situaciones como desempleo, incapacidad o jubilación.",
@@ -286,18 +253,6 @@ const missions: Mission[] = [
           "Correcto. El DAFO ayuda a tomar decisiones realistas y estratégicas."
       },
       {
-        q: "¿Qué elemento pertenece al autoconocimiento profesional?",
-        options: [
-          "Intereses, motivaciones, habilidades, destrezas y competencias personales.",
-          "Solo el nombre de la empresa donde se quiere trabajar.",
-          "La normativa de primeros auxilios exclusivamente.",
-          "El número de pagas extra."
-        ],
-        answer: 0,
-        feedback:
-          "Muy bien. El autoconocimiento es la base de la hoja de ruta profesional."
-      },
-      {
         q: "¿Cómo debe ser un objetivo profesional útil?",
         options: [
           "Concreto, realista, conectado con intereses y acompañado de acciones.",
@@ -355,18 +310,6 @@ const missions: Mission[] = [
         answer: 0,
         feedback:
           "Correcto. El PLE ayuda a aprender de forma autónoma y mejorar la empleabilidad."
-      },
-      {
-        q: "¿Por qué importa la identidad digital en la empleabilidad?",
-        options: [
-          "Porque la imagen profesional online puede influir en procesos de selección y oportunidades laborales.",
-          "Porque solo sirve para redes sociales de ocio.",
-          "Porque sustituye siempre a la entrevista personal.",
-          "Porque no tiene relación con el mundo laboral."
-        ],
-        answer: 0,
-        feedback:
-          "Exacto. Cuidar la identidad digital es parte de la estrategia profesional."
       },
       {
         q: "¿Qué debe incluir un plan de desarrollo individual?",
