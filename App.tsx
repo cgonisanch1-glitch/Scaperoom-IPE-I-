@@ -87,6 +87,39 @@ const missions: Mission[] = [
         ],
         answer: 1,
         feedback: "Muy bien. Son clave para la empleabilidad y para identificar la zona de desarrollo próximo."
+      },
+      {
+        q: "Que diferencia principal hay entre trabajar en el sector privado y en la funcion publica?",
+        options: [
+          "El sector privado depende de empresas y la funcion publica se accede normalmente mediante procesos selectivos.",
+          "En la funcion publica no existen derechos laborales.",
+          "El sector privado siempre exige oposicion.",
+          "No hay ninguna diferencia relevante."
+        ],
+        answer: 0,
+        feedback: "Correcto. Comparar vias de acceso y condiciones ayuda a elegir itinerarios profesionales."
+      },
+      {
+        q: "Que fuente seria mas util para investigar ofertas reales del sector?",
+        options: [
+          "Portales de empleo, webs de empresas, bolsas de trabajo y convocatorias oficiales.",
+          "Solo comentarios informales sin contrastar.",
+          "Un juego online sin relacion con el sector.",
+          "Una noticia antigua que no se actualiza."
+        ],
+        answer: 0,
+        feedback: "Exacto. Conviene usar fuentes variadas y actualizadas para conocer el mercado laboral."
+      },
+      {
+        q: "Que significa zona de desarrollo proximo profesional?",
+        options: [
+          "Las competencias que una persona puede mejorar con apoyo, practica y formacion.",
+          "Un lugar fisico dentro de la empresa.",
+          "Un puesto que no requiere aprendizaje.",
+          "Una lista cerrada de trabajos imposibles."
+        ],
+        answer: 0,
+        feedback: "Muy bien. Detectar esa zona permite planificar mejoras realistas."
       }
     ],
     trueFalse: {
@@ -144,6 +177,39 @@ const missions: Mission[] = [
         answer: 0,
         feedback:
           "Correcto. Los daños profesionales incluyen accidentes de trabajo y enfermedades profesionales."
+      },
+      {
+        q: "Que tipo de medida debe priorizarse cuando es posible?",
+        options: [
+          "Eliminar el riesgo en origen o aplicar proteccion colectiva.",
+          "Usar solo EPIs aunque exista una solucion colectiva.",
+          "No informar a la plantilla para evitar preocupacion.",
+          "Actuar solo despues de un accidente grave."
+        ],
+        answer: 0,
+        feedback: "Correcto. La prevencion eficaz empieza por eliminar o reducir el riesgo en origen."
+      },
+      {
+        q: "Que es una evaluacion de riesgos laborales?",
+        options: [
+          "Un proceso para identificar peligros, valorar riesgos y decidir medidas preventivas.",
+          "Una sancion automatica al trabajador.",
+          "Un documento decorativo sin utilidad practica.",
+          "Una revision exclusiva del salario."
+        ],
+        answer: 0,
+        feedback: "Exacto. La evaluacion orienta las decisiones preventivas en el puesto."
+      },
+      {
+        q: "Que actuacion basica corresponde ante una emergencia?",
+        options: [
+          "Proteger, avisar y socorrer siguiendo el plan establecido.",
+          "Correr sin avisar a nadie.",
+          "Grabar la situacion antes de ayudar.",
+          "Mover siempre a la persona herida sin valorar riesgos."
+        ],
+        answer: 0,
+        feedback: "Muy bien. La conducta PAS ayuda a responder de forma ordenada y segura."
       }
     ],
     trueFalse: {
@@ -203,6 +269,39 @@ const missions: Mission[] = [
         ],
         answer: 0,
         feedback: "Exacto. Es un pilar esencial de protección social."
+      },
+      {
+        q: "Que dato debe aparecer siempre en un contrato de trabajo?",
+        options: [
+          "La identificacion de las partes, el puesto, la jornada, la duracion y las condiciones principales.",
+          "La opinion personal de los companeros.",
+          "La clave del wifi de la empresa.",
+          "Una lista de redes sociales personales."
+        ],
+        answer: 0,
+        feedback: "Correcto. El contrato debe recoger los elementos esenciales de la relacion laboral."
+      },
+      {
+        q: "Que diferencia hay entre salario bruto y salario neto?",
+        options: [
+          "El bruto es antes de deducciones y el neto es lo que finalmente se cobra.",
+          "El neto siempre es mayor que el bruto.",
+          "Son exactamente la misma cantidad.",
+          "El bruto solo aparece en contratos publicos."
+        ],
+        answer: 0,
+        feedback: "Exacto. Entender esa diferencia es basico para interpretar una nomina."
+      },
+      {
+        q: "Que puede modificar una relacion laboral sin extinguirla?",
+        options: [
+          "Una vicisitud como movilidad, modificacion de condiciones, suspension o excedencia.",
+          "La destruccion de todos los documentos laborales.",
+          "La desaparicion automatica del convenio.",
+          "La renuncia a todos los derechos."
+        ],
+        answer: 0,
+        feedback: "Muy bien. Las vicisitudes alteran la relacion laboral, pero no siempre la finalizan."
       }
     ],
     trueFalse: {
@@ -262,6 +361,39 @@ const missions: Mission[] = [
         ],
         answer: 0,
         feedback: "Exacto. Un buen objetivo orienta el plan de acción."
+      },
+      {
+        q: "Que elemento pertenece a las fortalezas de un DAFO personal?",
+        options: [
+          "Una habilidad propia que mejora la empleabilidad.",
+          "Una amenaza externa del mercado laboral.",
+          "Un requisito de una oferta que no se cumple.",
+          "Una tendencia economica del sector."
+        ],
+        answer: 0,
+        feedback: "Correcto. Las fortalezas son aspectos internos positivos del perfil profesional."
+      },
+      {
+        q: "Que debe incluir un plan de accion profesional?",
+        options: [
+          "Acciones concretas, recursos, plazos y seguimiento.",
+          "Solo una idea general sin fecha.",
+          "Un objetivo imposible de comprobar.",
+          "Un listado de excusas para no avanzar."
+        ],
+        answer: 0,
+        feedback: "Exacto. El plan de accion convierte el objetivo en pasos realizables."
+      },
+      {
+        q: "Por que conviene revisar el itinerario profesional?",
+        options: [
+          "Porque los intereses, oportunidades y circunstancias pueden cambiar.",
+          "Porque una decision inicial nunca se puede mejorar.",
+          "Porque revisar objetivos reduce siempre la empleabilidad.",
+          "Porque todos los itinerarios son iguales."
+        ],
+        answer: 0,
+        feedback: "Muy bien. La orientacion profesional es un proceso que se ajusta con el tiempo."
       }
     ],
     trueFalse: {
@@ -322,6 +454,39 @@ const missions: Mission[] = [
         answer: 0,
         feedback:
           "Muy bien. El plan de desarrollo convierte la orientación en acciones concretas."
+      },
+      {
+        q: "Que practica mejora la identidad digital profesional?",
+        options: [
+          "Usar un correo formal, cuidar perfiles profesionales y mostrar evidencias de aprendizaje.",
+          "Publicar informacion confusa o poco cuidada.",
+          "No revisar nunca la privacidad.",
+          "Usar solo apodos poco profesionales en todos los contextos."
+        ],
+        answer: 0,
+        feedback: "Correcto. La identidad digital debe transmitir una imagen coherente y profesional."
+      },
+      {
+        q: "Que herramienta encaja mejor dentro de un PLE?",
+        options: [
+          "Una plataforma para organizar recursos, seguir fuentes fiables y registrar aprendizajes.",
+          "Una aplicacion usada solo para distraerse en clase.",
+          "Un documento vacio que nunca se revisa.",
+          "Una cuenta sin acceso ni contenido."
+        ],
+        answer: 0,
+        feedback: "Exacto. El PLE combina herramientas y fuentes para aprender de manera autonoma."
+      },
+      {
+        q: "Que significa aprendizaje permanente?",
+        options: [
+          "Actualizar competencias durante toda la vida academica y profesional.",
+          "Estudiar una sola vez y no volver a formarse.",
+          "Aprender solo si lo exige una sancion.",
+          "Rechazar nuevas herramientas del sector."
+        ],
+        answer: 0,
+        feedback: "Muy bien. Mantenerse actualizado mejora la empleabilidad y la adaptacion profesional."
       }
     ],
     trueFalse: {
