@@ -531,6 +531,7 @@ const secretNumbers: Record<number, string> = {
 };
 
 const finalSecretCode = "IPE-31524";
+const finalSecretNumber = finalSecretCode.replace(/\D/g, "");
 
 export default function App() {
   const [started, setStarted] = useState(false);
@@ -586,6 +587,19 @@ export default function App() {
 
   const allCompleted = missions.every((m) => completed[m.id]);
 
+  const unlockFinalLock = () => {
+    const normalizedCode = finalCodeInput.trim().toUpperCase();
+    const normalizedNumber = normalizedCode.replace(/\D/g, "");
+
+    if (normalizedCode === finalSecretCode || normalizedNumber === finalSecretNumber) {
+      setFinalCodeError(false);
+      setGamePassed(true);
+      return;
+    }
+
+    setFinalCodeError(true);
+  };
+
   const reset = () => {
     setStarted(false);
     setActiveMission(0);
@@ -625,12 +639,20 @@ export default function App() {
                 La misión integral del módulo
               </h2>
 
-              <p className="text-lg sm:text-xl leading-relaxed text-slate-300 max-w-2xl mb-12">
-                Superad cinco misiones vinculadas a los Resultados de Aprendizaje
-                del módulo: sector profesional, prevención de riesgos laborales,
-                relación laboral, autoconocimiento profesional y aprendizaje
-                autónomo.
-              </p>
+              <div className="text-lg sm:text-xl leading-relaxed text-slate-300 max-w-3xl mb-12 space-y-5">
+                <p>
+                  Habéis llegado al final del módulo de IPE I, pero antes de cerrar el curso, la Central del Futuro Profesional ha activado un último protocolo de validación.
+                </p>
+                <p>
+                  Para demostrar que estáis preparados para afrontar vuestro próximo reto académico, laboral y profesional, deberéis superar cinco misiones, cada una vinculada a un Resultado de Aprendizaje del módulo.
+                </p>
+                <p>
+                  En cada misión tendréis que resolver pruebas sobre el sector profesional, la prevención de riesgos laborales, la relación laboral, el autoconocimiento y el aprendizaje autónomo.
+                </p>
+                <p>
+                  Cada RA desbloqueará una medalla y un número secreto. Solo si conseguís los cinco números podréis abrir el candado final y demostrar que habéis alcanzado los 5 RA de IPE I.
+                </p>
+              </div>
 
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
                 {missions.map((m) => (
@@ -813,6 +835,7 @@ export default function App() {
                     const chosen = selected[key];
                     const answered = chosen !== undefined;
                     const correct = chosen === question.answer;
+                    const locked = answered && correct;
 
                     return (
                       <div key={key} className="bg-slate-50 rounded-3xl p-6 border border-slate-100">
@@ -824,18 +847,17 @@ export default function App() {
                         <div className="grid grid-cols-1 gap-3">
                           {question.options.map((op, oi) => {
                             const isChosen = chosen === oi;
-                            const isRight = question.answer === oi;
                             
                             let classes = "w-full text-left p-5 rounded-2xl border-2 transition-all font-semibold font-medium flex items-center gap-4 group ";
                             
-                            if (answered) {
-                              if (isRight) {
+                            if (answered && isChosen) {
+                              if (isChosen && correct) {
                                 classes += "bg-emerald-50 border-emerald-500 text-emerald-900 shadow-lg shadow-emerald-500/5";
-                              } else if (isChosen) {
-                                classes += "bg-rose-50 border-rose-500 text-rose-900";
                               } else {
-                                classes += "bg-white border-transparent opacity-50 grayscale";
+                                classes += "bg-rose-50 border-rose-500 text-rose-900";
                               }
+                            } else if (locked) {
+                              classes += "bg-white border-transparent opacity-50 grayscale";
                             } else {
                               classes += "bg-white border-transparent hover:border-indigo-100 hover:shadow-lg hover:shadow-indigo-500/5 active:scale-[0.99] cursor-pointer";
                             }
@@ -843,12 +865,12 @@ export default function App() {
                             return (
                               <button
                                 key={oi}
-                                disabled={answered}
+                                disabled={locked}
                                 className={classes}
                                 onClick={() => setSelected((prev) => ({ ...prev, [key]: oi }))}
                               >
                                 <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border-2 font-black transition-colors ${
-                                  answered && isRight ? 'bg-emerald-500 border-emerald-500 text-white' : 
+                                  answered && isChosen && correct ? 'bg-emerald-500 border-emerald-500 text-white' : 
                                   answered && isChosen ? 'bg-rose-500 border-rose-500 text-white' :
                                   'bg-slate-100 border-slate-200 text-slate-400 group-hover:bg-indigo-50 group-hover:border-indigo-200 group-hover:text-indigo-600'
                                 }`}>
@@ -870,9 +892,11 @@ export default function App() {
                               {correct ? <CheckCircle2 className="w-6 h-6 shrink-0" /> : <AlertCircle className="w-6 h-6 shrink-0" />}
                               <div className="text-sm">
                                 <div className="font-black uppercase tracking-widest text-[10px] mb-1 opacity-60">
-                                  {correct ? "Excelente" : "Importante destacar"}
+                                  {correct ? "Excelente" : "Respuesta incorrecta"}
                                 </div>
-                                <p className="font-bold">{question.feedback}</p>
+                                <p className="font-bold">
+                                  {correct ? question.feedback : "Revisa el contenido y vuelve a intentarlo en la próxima ronda."}
+                                </p>
                               </div>
                             </motion.div>
                           )}
@@ -903,19 +927,21 @@ export default function App() {
                         const chosen = tfSelected[current.id];
                         const answered = chosen !== undefined;
                         const isChosen = chosen === val;
-                        const isRight = current.trueFalse.answer === val;
+                        const correct = chosen === current.trueFalse.answer;
+                        const locked = answered && correct;
 
                         let colorClass = "bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/40";
-                        if (answered) {
-                          if (isRight) colorClass = "bg-emerald-500 border-emerald-500 shadow-xl shadow-emerald-500/20";
-                          else if (isChosen) colorClass = "bg-rose-500 border-rose-500";
-                          else colorClass = "bg-white/5 border-white/5 opacity-50";
+                        if (answered && isChosen) {
+                          if (isChosen && correct) colorClass = "bg-emerald-500 border-emerald-500 shadow-xl shadow-emerald-500/20";
+                          else colorClass = "bg-rose-500 border-rose-500";
+                        } else if (locked) {
+                          colorClass = "bg-white/5 border-white/5 opacity-50";
                         }
 
                         return (
                           <button
                             key={String(val)}
-                            disabled={answered}
+                            disabled={locked}
                             className={`p-5 rounded-2xl border-2 transition-all font-black text-lg cursor-pointer ${colorClass}`}
                             onClick={() => setTfSelected(p => ({ ...p, [current.id]: val }))}
                           >
@@ -935,7 +961,9 @@ export default function App() {
                           }`}
                         >
                           <Award className="w-5 h-5 shrink-0 mt-1" />
-                          <p className="text-sm font-bold text-slate-200">{current.trueFalse.feedback}</p>
+                          <p className="text-sm font-bold text-slate-200">
+                            {tfSelected[current.id] === current.trueFalse.answer ? current.trueFalse.feedback : "Respuesta incorrecta. Revisa el contenido antes de continuar."}
+                          </p>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -971,13 +999,15 @@ export default function App() {
                       const chosen = caseSelected[current.id];
                       const answered = chosen !== undefined;
                       const isChosen = chosen === oi;
-                      const isRight = current.caseStudy.answer === oi;
+                      const correct = chosen === current.caseStudy.answer;
+                      const locked = answered && correct;
 
                       let classes = "w-full text-left p-5 rounded-2xl border-2 transition-all font-bold flex items-center gap-4 ";
-                      if (answered) {
-                        if (isRight) classes += "bg-emerald-50 border-emerald-500 text-emerald-900";
-                        else if (isChosen) classes += "bg-rose-50 border-rose-500 text-rose-900";
-                        else classes += "bg-white border-transparent opacity-50";
+                      if (answered && isChosen) {
+                        if (isChosen && correct) classes += "bg-emerald-50 border-emerald-500 text-emerald-900";
+                        else classes += "bg-rose-50 border-rose-500 text-rose-900";
+                      } else if (locked) {
+                        classes += "bg-white border-transparent opacity-50";
                       } else {
                         classes += "bg-white border-transparent hover:border-orange-200 hover:shadow-lg active:scale-[0.99] cursor-pointer";
                       }
@@ -985,7 +1015,7 @@ export default function App() {
                       return (
                         <button
                           key={oi}
-                          disabled={answered}
+                          disabled={locked}
                           className={classes}
                           onClick={() => setCaseSelected(p => ({ ...p, [current.id]: oi }))}
                         >
@@ -1005,7 +1035,7 @@ export default function App() {
                           caseSelected[current.id] === current.caseStudy.answer ? 'bg-emerald-500 text-white' : 'bg-rose-500 text-white'
                         }`}
                       >
-                         {current.caseStudy.feedback}
+                         {caseSelected[current.id] === current.caseStudy.answer ? current.caseStudy.feedback : "Respuesta incorrecta. Revisa el caso antes de continuar."}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -1112,16 +1142,15 @@ export default function App() {
                       setFinalCodeInput(e.target.value.toUpperCase());
                       setFinalCodeError(false);
                     }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        unlockFinalLock();
+                      }
+                    }}
                   />
                   <button
                     className="bg-amber-400 text-slate-950 font-black text-xl px-12 py-6 rounded-2xl hover:bg-amber-300 active:scale-95 transition-all shadow-2xl shadow-amber-400/20 cursor-pointer uppercase italic"
-                    onClick={() => {
-                      if (finalCodeInput.trim().toUpperCase() === finalSecretCode) {
-                        setGamePassed(true);
-                      } else {
-                        setFinalCodeError(true);
-                      }
-                    }}
+                    onClick={unlockFinalLock}
                   >
                     Liberar
                   </button>
@@ -1145,9 +1174,9 @@ export default function App() {
           >
             <div className="relative z-10">
               <Trophy className="w-32 h-32 text-amber-500 mx-auto mb-8 drop-shadow-xl" />
-              <h2 className="text-6xl font-black mb-4 tracking-tight">¡Escape Room Superado!</h2>
+              <h2 className="text-6xl font-black mb-4 tracking-tight">Enhorabuena</h2>
               <p className="text-2xl text-slate-500 font-medium max-w-3xl mx-auto mb-12">
-                Habéis demostrado dominar los 5 resultados de aprendizaje de IPE I. Las medallas de mérito han sido desbloqueadas.
+                Candado liberado. Habéis superado el Escape Room y demostrado dominar los 5 resultados de aprendizaje de IPE I.
               </p>
 
               <div className="inline-block px-10 py-6 bg-slate-950 text-white rounded-3xl mb-20 font-mono text-3xl font-black tracking-widest shadow-2xl">
