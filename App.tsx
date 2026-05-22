@@ -81,11 +81,11 @@ const missions: Mission[] = [
         q: "¿Qué son las competencias personales y sociales con valor profesional?",
         options: [
           "Solo conocimientos técnicos del ciclo.",
-          "Rasgos y habilidades como responsabilidad, comunicación, autonomía, trabajo en equipo y adaptación.",
           "La nota media del expediente académico.",
+          "Rasgos y habilidades como responsabilidad, comunicación, autonomía, trabajo en equipo y adaptación.",
           "La experiencia laboral únicamente."
         ],
-        answer: 1,
+        answer: 2,
         feedback: "Muy bien. Son clave para la empleabilidad y para identificar la zona de desarrollo próximo."
       },
       {
@@ -102,23 +102,23 @@ const missions: Mission[] = [
       {
         q: "Que fuente seria mas util para investigar ofertas reales del sector?",
         options: [
-          "Portales de empleo, webs de empresas, bolsas de trabajo y convocatorias oficiales.",
           "Solo comentarios informales sin contrastar.",
           "Un juego online sin relacion con el sector.",
-          "Una noticia antigua que no se actualiza."
+          "Una noticia antigua que no se actualiza.",
+          "Portales de empleo, webs de empresas, bolsas de trabajo y convocatorias oficiales."
         ],
-        answer: 0,
+        answer: 3,
         feedback: "Exacto. Conviene usar fuentes variadas y actualizadas para conocer el mercado laboral."
       },
       {
         q: "Que significa zona de desarrollo proximo profesional?",
         options: [
-          "Las competencias que una persona puede mejorar con apoyo, practica y formacion.",
           "Un lugar fisico dentro de la empresa.",
           "Un puesto que no requiere aprendizaje.",
+          "Las competencias que una persona puede mejorar con apoyo, practica y formacion.",
           "Una lista cerrada de trabajos imposibles."
         ],
-        answer: 0,
+        answer: 2,
         feedback: "Muy bien. Detectar esa zona permite planificar mejoras realistas."
       }
     ],
@@ -169,35 +169,35 @@ const missions: Mission[] = [
       {
         q: "¿Cuál de estos ejemplos es un daño profesional?",
         options: [
-          "Una enfermedad profesional causada por la exposición a un agente del trabajo.",
           "Una afición personal realizada fuera del trabajo.",
           "Un curso voluntario sin relación laboral.",
+          "Una enfermedad profesional causada por la exposición a un agente del trabajo.",
           "Una compra de material escolar."
         ],
-        answer: 0,
+        answer: 2,
         feedback:
           "Correcto. Los daños profesionales incluyen accidentes de trabajo y enfermedades profesionales."
       },
       {
         q: "Que tipo de medida debe priorizarse cuando es posible?",
         options: [
-          "Eliminar el riesgo en origen o aplicar proteccion colectiva.",
           "Usar solo EPIs aunque exista una solucion colectiva.",
+          "Eliminar el riesgo en origen o aplicar proteccion colectiva.",
           "No informar a la plantilla para evitar preocupacion.",
           "Actuar solo despues de un accidente grave."
         ],
-        answer: 0,
+        answer: 1,
         feedback: "Correcto. La prevencion eficaz empieza por eliminar o reducir el riesgo en origen."
       },
       {
         q: "Que es una evaluacion de riesgos laborales?",
         options: [
-          "Un proceso para identificar peligros, valorar riesgos y decidir medidas preventivas.",
           "Una sancion automatica al trabajador.",
           "Un documento decorativo sin utilidad practica.",
-          "Una revision exclusiva del salario."
+          "Una revision exclusiva del salario.",
+          "Un proceso para identificar peligros, valorar riesgos y decidir medidas preventivas."
         ],
-        answer: 0,
+        answer: 3,
         feedback: "Exacto. La evaluacion orienta las decisiones preventivas en el puesto."
       },
       {
@@ -250,12 +250,12 @@ const missions: Mission[] = [
       {
         q: "¿Qué documento regula condiciones laborales como salario, jornada o permisos en un sector?",
         options: [
-          "El convenio colectivo aplicable.",
           "La agenda personal.",
           "El currículum vitae.",
+          "El convenio colectivo aplicable.",
           "Una oferta de empleo cualquiera."
         ],
-        answer: 0,
+        answer: 2,
         feedback:
           "Muy bien. El convenio colectivo es una fuente clave para conocer las condiciones de trabajo."
       },
@@ -273,34 +273,34 @@ const missions: Mission[] = [
       {
         q: "Que dato debe aparecer siempre en un contrato de trabajo?",
         options: [
-          "La identificacion de las partes, el puesto, la jornada, la duracion y las condiciones principales.",
           "La opinion personal de los companeros.",
           "La clave del wifi de la empresa.",
-          "Una lista de redes sociales personales."
+          "Una lista de redes sociales personales.",
+          "La identificacion de las partes, el puesto, la jornada, la duracion y las condiciones principales."
         ],
-        answer: 0,
+        answer: 3,
         feedback: "Correcto. El contrato debe recoger los elementos esenciales de la relacion laboral."
       },
       {
         q: "Que diferencia hay entre salario bruto y salario neto?",
         options: [
-          "El bruto es antes de deducciones y el neto es lo que finalmente se cobra.",
           "El neto siempre es mayor que el bruto.",
+          "El bruto es antes de deducciones y el neto es lo que finalmente se cobra.",
           "Son exactamente la misma cantidad.",
           "El bruto solo aparece en contratos publicos."
         ],
-        answer: 0,
+        answer: 1,
         feedback: "Exacto. Entender esa diferencia es basico para interpretar una nomina."
       },
       {
         q: "Que puede modificar una relacion laboral sin extinguirla?",
         options: [
-          "Una vicisitud como movilidad, modificacion de condiciones, suspension o excedencia.",
           "La destruccion de todos los documentos laborales.",
           "La desaparicion automatica del convenio.",
+          "Una vicisitud como movilidad, modificacion de condiciones, suspension o excedencia.",
           "La renuncia a todos los derechos."
         ],
-        answer: 0,
+        answer: 2,
         feedback: "Muy bien. Las vicisitudes alteran la relacion laboral, pero no siempre la finalizan."
       }
     ],
@@ -354,34 +354,34 @@ const missions: Mission[] = [
       {
         q: "¿Cómo debe ser un objetivo profesional útil?",
         options: [
-          "Concreto, realista, conectado con intereses y acompañado de acciones.",
           "Muy general y sin plazo.",
           "Copiado de otra persona.",
-          "Basado solo en la suerte."
+          "Basado solo en la suerte.",
+          "Concreto, realista, conectado con intereses y acompañado de acciones."
         ],
-        answer: 0,
+        answer: 3,
         feedback: "Exacto. Un buen objetivo orienta el plan de acción."
       },
       {
         q: "Que elemento pertenece a las fortalezas de un DAFO personal?",
         options: [
-          "Una habilidad propia que mejora la empleabilidad.",
           "Una amenaza externa del mercado laboral.",
           "Un requisito de una oferta que no se cumple.",
+          "Una habilidad propia que mejora la empleabilidad.",
           "Una tendencia economica del sector."
         ],
-        answer: 0,
+        answer: 2,
         feedback: "Correcto. Las fortalezas son aspectos internos positivos del perfil profesional."
       },
       {
         q: "Que debe incluir un plan de accion profesional?",
         options: [
-          "Acciones concretas, recursos, plazos y seguimiento.",
           "Solo una idea general sin fecha.",
+          "Acciones concretas, recursos, plazos y seguimiento.",
           "Un objetivo imposible de comprobar.",
           "Un listado de excusas para no avanzar."
         ],
-        answer: 0,
+        answer: 1,
         feedback: "Exacto. El plan de accion convierte el objetivo en pasos realizables."
       },
       {
@@ -434,36 +434,36 @@ const missions: Mission[] = [
       {
         q: "¿Qué es un PLE?",
         options: [
-          "Un entorno personal de aprendizaje formado por herramientas, fuentes, conexiones y actividades para seguir aprendiendo.",
           "Un tipo de contrato laboral.",
           "Una prestación de Seguridad Social.",
+          "Un entorno personal de aprendizaje formado por herramientas, fuentes, conexiones y actividades para seguir aprendiendo.",
           "Un documento obligatorio de la nómina."
         ],
-        answer: 0,
+        answer: 2,
         feedback:
           "Correcto. El PLE ayuda a aprender de forma autónoma y mejorar la empleabilidad."
       },
       {
         q: "¿Qué debe incluir un plan de desarrollo individual?",
         options: [
-          "Objetivos, áreas de mejora, acciones, recursos, plazos y seguimiento.",
           "Solo una lista de deseos.",
+          "Objetivos, áreas de mejora, acciones, recursos, plazos y seguimiento.",
           "Únicamente datos personales.",
           "Solo enlaces a vídeos aleatorios."
         ],
-        answer: 0,
+        answer: 1,
         feedback:
           "Muy bien. El plan de desarrollo convierte la orientación en acciones concretas."
       },
       {
         q: "Que practica mejora la identidad digital profesional?",
         options: [
-          "Usar un correo formal, cuidar perfiles profesionales y mostrar evidencias de aprendizaje.",
           "Publicar informacion confusa o poco cuidada.",
           "No revisar nunca la privacidad.",
-          "Usar solo apodos poco profesionales en todos los contextos."
+          "Usar solo apodos poco profesionales en todos los contextos.",
+          "Usar un correo formal, cuidar perfiles profesionales y mostrar evidencias de aprendizaje."
         ],
-        answer: 0,
+        answer: 3,
         feedback: "Correcto. La identidad digital debe transmitir una imagen coherente y profesional."
       },
       {
@@ -480,12 +480,12 @@ const missions: Mission[] = [
       {
         q: "Que significa aprendizaje permanente?",
         options: [
-          "Actualizar competencias durante toda la vida academica y profesional.",
           "Estudiar una sola vez y no volver a formarse.",
+          "Actualizar competencias durante toda la vida academica y profesional.",
           "Aprender solo si lo exige una sancion.",
           "Rechazar nuevas herramientas del sector."
         ],
-        answer: 0,
+        answer: 1,
         feedback: "Muy bien. Mantenerse actualizado mejora la empleabilidad y la adaptacion profesional."
       }
     ],
